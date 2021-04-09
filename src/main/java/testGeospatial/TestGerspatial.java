@@ -21,12 +21,13 @@ public class TestGerspatial {
 
         jedis.auth("95827");
 
-        jedis.flushDB();
-
-        Map<String, GeoCoordinate> map = new HashMap<>();
-        map.put("beijing",new GeoCoordinate(121.445, 31.417));
-        System.out.println(jedis.geoadd("geo", map));
+//        jedis.flushDB();
+//
+//        Map<String, GeoCoordinate> map = new HashMap<>();
+//        map.put("beijing",new GeoCoordinate(121.445, 31.417));
+//        System.out.println(jedis.geoadd("geo", map));
+        System.out.println(jedis.get("test"));
+        System.out.println(jedis.get("user"));
         System.out.println(jedis.geopos("geo", "beijing"));
-        jedis.close();
     }
 }
